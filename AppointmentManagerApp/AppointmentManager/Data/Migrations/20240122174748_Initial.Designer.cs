@@ -12,7 +12,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace AppointmentManager.Data.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20240122170326_Initial")]
+    [Migration("20240122174748_Initial")]
     partial class Initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)

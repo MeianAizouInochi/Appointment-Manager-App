@@ -31,8 +31,5 @@ namespace AppointmentManager.Data.Models
         public bool Deleted { get; set; } = false;
 
         public byte LevelOfImportance { get; set; } = 2;
-
-
-
     }
 }
