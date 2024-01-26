@@ -9,6 +9,9 @@ const context =  [
   "api/appointment/filters"
 ];
 
+console.log("\nThe Target is: ", target + "\n")
+
+
 module.exports = function(app) {
   const appProxy = createProxyMiddleware(context, {
     target: target,

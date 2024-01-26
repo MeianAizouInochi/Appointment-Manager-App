@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using AppointmentManager.Data;
 using AppointmentManager.Data.Models;
+using NuGet.Protocol;
 
 namespace AppointmentManager.Controllers
 {
@@ -29,7 +30,9 @@ namespace AppointmentManager.Controllers
           {
               return NotFound("No Data Found.");
           }
-            return await _context.Appointments.Where(e=> !e.Deleted && !e.Done).ToListAsync();
+            var x =  await _context.Appointments.Where(e=> !e.Deleted && !e.Done).ToListAsync();
+
+            return x;
         }
 
         // GET: api/Appointments/5
@@ -126,7 +129,7 @@ namespace AppointmentManager.Controllers
             return NoContent();
         }
 
-        // POST: api/Appointments
+        // POST: api/appointment
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPost]
         public async Task<ActionResult<Appointment>> PostAppointment(Appointment appointment)
